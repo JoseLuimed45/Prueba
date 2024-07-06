@@ -1,0 +1,36 @@
+import json
+import numpy as np
+from funciones import *
+  
+def mostrar_menu():
+    while True:
+        print('\n---ATENCION MEDICA VETERINARAIA---')
+        print('\n¿Qué opcion desea ejecutar?: ')
+              
+        print('1.- Crear ficha mascota')
+        print('2.- Buscar por Codigo mascota')
+        print('3.- Eliminar codigo mascota')
+        print('4.- Lista de pacientes atendidos')
+        print('5.- Salir y guardar')
+        op = input('\nSeleccione una opción: ')
+
+        if op == '1':
+            ingreso_mascota()
+        elif op == '2':
+            buscar_mascota_por_codigo()
+        elif op == '3':
+            buscar_medicamentos_codigo()
+        elif op == '4':
+            eliminar_mascota()
+        elif op == '5':
+            listado_mascota()
+        elif op == '6':
+            salirYguardar()
+            print(matriz_mascotas[0,1])
+            break
+        else:
+            print("Opción no válida, intente nuevamente.")
+
+if __name__ == "__main__":
+    cargar_datos("datos_mascotas.json")
+    
